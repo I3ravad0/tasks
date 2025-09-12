@@ -27,6 +27,21 @@
 //     [14,15,19,19,20,22,18,17]: 19 is the most frequent in 4th array
 //     [15,17,24,24,24,20,20,20]: 24 and 20 appear 3 times each in 5th array so 20 is included in the output as the last 20 appears later than the last 24.
 
+const task = {
+    description: '',
+    tests: [
+        
+    ],
+    getResults(func) {
+        const results
+        test.forEach(test => {
+            results.push(func(test))
+        }
+        return results
+    },
+    output: ''
+}
+
 function getMostFrequent(json) {
     const frequentTemp = []
 
