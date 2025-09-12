@@ -32,12 +32,11 @@ const task = {
     tests: [
         
     ],
+    results: [],
     getResults(func) {
-        const results
-        test.forEach(test => {
-            results.push(func(test))
-        }
-        return results
+        this.test.forEach(test => {
+            this.results.push(func(test))
+        })
     },
     output: ''
 }
