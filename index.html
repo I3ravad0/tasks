@@ -4,8 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task window</title>
+
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+    <div id="input-box">
+        <div id="task-type">
+            <select id="type">
+                <option value="Arrays">Arrays</option>
+                <option value="Numbers">Numbers</option>
+                <option value="String">String</option>
+            </select>
+            <!-- SELECT FOR ARRAYS -->
+            <select id="arrays-tasks">
+                <option value="task1">Поиск наиболее частой температуры</option>
+                <option value="task2">Соединение чисел в массиве в промежутки</option>
+            </select>
+            <!-- SELECT FOR NUMBERS -->
+             <select id="numbers-tasks">
+                <option value="task1">Следующий квадрат, если он квадрат</option>
+                <option value="task2">Перевод секунд в воспринимаемое время</option>
+                <option value="task3">Число Армстронга</option>
+                <option value="task4">Регрессивная линия</option>
+                <option value="task5">Сложение больших чисел</option>
+                <option value="task6">Разница между IP адресами</option>
+                <option value="task7">Биномиальное разложение</option>
+                <option value="task8">Сумма двух элементов массива равная числу</option>
+                <option value="task9">Факториал любого числа</option>
+            </select>
+            <!-- SELECT FOR STRING -->
+            <select id="string-tasks">
+                <option value="task1">Поиск похожих символов</option>
+                <option value="task2">Отбор подходящих элементов массива</option>
+                <option value="task3">Центр строки</option>
+                <option value="task4">Разбивка строки на пары символов</option>
+                <option value="task5">Символы строки в объект</option>
+                <option value="task6">Выделение из URL доменного имени</option>
+                <option value="task7">Перевод на свин-латинский</option>
+                <option value="task8">Самые частые слова в тексте</option>
+                <option value="task9">Выравнивание строки по ширине</option>
+                <option value="task10">Алгоритм Луна</option>
+            </select>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
