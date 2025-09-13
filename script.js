@@ -113,7 +113,7 @@ function createTaskTableRow(input, output) {
     const tableRowInput = document.createElement('td')
     const tableRowOutput = document.createElement('td')
     tableRowInput.textContent = input
-    tableRowOutput.textContent = output
+    tableRowOutput.innerHTML = output
     tableRow.appendChild(tableRowInput)
     tableRow.appendChild(tableRowOutput)
     document.querySelector('table').appendChild(tableRow)
