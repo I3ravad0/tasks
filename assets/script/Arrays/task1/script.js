@@ -27,19 +27,7 @@
 //     [14,15,19,19,20,22,18,17]: 19 is the most frequent in 4th array
 //     [15,17,24,24,24,20,20,20]: 24 and 20 appear 3 times each in 5th array so 20 is included in the output as the last 20 appears later than the last 24.
 
-const task = {
-    description: '',
-    tests: [
-        
-    ],
-    results: [],
-    getResults(func) {
-        this.test.forEach(test => {
-            this.results.push(func(test))
-        })
-    },
-    output: ''
-}
+
 
 function getMostFrequent(json) {
     const frequentTemp = []
@@ -61,13 +49,51 @@ function getMostFrequent(json) {
     return frequentTemp;
 }
 
-const json = { "temperature" : [
+
+console.log(getMostFrequent({ "temperature" : [
     [15,17,19,21,21,21,20,16],
     [16,17,22,22,22,22,20,16],
     [12,17,19,20,20,20,20,18],
     [14,15,19,19,20,22,18,17],
     [15,17,24,24,24,20,20,20]
   ]
-}
+}));
 
-console.log(getMostFrequent(json));
+task = {
+    description: `
+    Input: <br><br>
+
+    A 5-day JSON weather forecast which consist of 5 arrays. 
+    Each of the 5 arrays includes 8 numbers which represent 3-hourly 
+    temperature forecast for a given day.<br><br>
+
+    Output:<br><br>
+
+    An array which includes the most frequent number (temperature) 
+    from each of the 5 arrays (days). In case there is a tie, return 
+    the value present later in a given array (day).  `,
+    tests: [
+        { "temperature" : [
+            [15,17,19,21,21,21,20,16],
+            [16,17,22,22,22,22,20,16],
+            [12,17,19,20,20,20,20,18],
+            [14,15,19,19,20,22,18,17],
+            [15,17,24,24,24,20,20,20]
+            ]
+        }
+    ],
+    results: [],
+    getResults(func) {
+        this.tests.forEach(test => {
+            this.results.push(func(test))
+        })
+    },
+    output: `temperature: [ <br>
+        [15,17,19,21,21,21,20,16],<br>
+        [16,17,22,22,22,22,20,16],<br>
+        [12,17,19,20,20,20,20,18],<br>
+        [14,15,19,19,20,22,18,17],<br>
+        [15,17,24,24,24,20,20,20]<br>
+  ]`
+}
+task.getResults(getMostFrequent)

@@ -1,4 +1,4 @@
-// You are going to be given a non-empty string. Your job is to return 
+// You are going to be given a non-empty string. Your job is to Return 
 // the middle character(s) of the string.
 
 //     If the string's length is odd, return the middle character.
@@ -14,6 +14,26 @@ function getMiddle(s) {
 }
 
 console.log(getMiddle('string'));
+
+task = {
+    description: `Return the middle character(s) of the string. <br> <br>
+    If the string's length is odd, return the middle character.<br>
+    If the string's length is even, return the middle 2 characters.
+    `,
+    tests: [
+        'some long string',
+        'string',
+        'str'
+    ],
+    results: [],
+    getResults(func) {
+        this.tests.forEach(test => {
+            this.results.push(func(test))
+        })
+    },
+    output: `N/A`
+}
+task.getResults(getMiddle)
 
 // BEST
 // function getMiddle(s)

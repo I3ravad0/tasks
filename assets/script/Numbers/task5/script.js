@@ -1,6 +1,6 @@
 // We need to sum big numbers and we require your help.
 
-// Write a function that returns the sum of two numbers. The input numbers are strings and the function must return a string.
+// Write a Function that returns the sum of two numbers. The input numbers are strings and the function must return a string.
 // Example
 
 // add("123", "321"); -> "444"
@@ -12,7 +12,8 @@
 //     The input is a string of only digits
 //     The numbers are positives
 
-function add(a, b) {
+function add(array) {
+    const a = array[0], b = array[1]
     const firstNum = a.split('').reverse()
     const secondNum = b.split('').reverse()
     const maxLength = firstNum.length > secondNum.length ? firstNum.length : secondNum.length
@@ -52,5 +53,26 @@ function add(a, b) {
     return resultNum.reverse().join('')
 }
 
-console.log(add('638299854298428934542543254327293874', '90938498237058927340892374089'));
+task = {
+    description: `Function that returns the sum of two numbers. The input numbers 
+    are strings and the function must return a string. <br> <br> 
+    Notes: <br> <br>
 
+    The input numbers are big. <br>
+    The input is a string of only digits. <br>
+    The numbers are positives.
+    `,
+    tests: [
+        ['345', '2345'],['423412', '0'],
+        ['4718964893231643764387243698274693', '6478326914873105387341043715'], 
+        ['432894392874893729', '300']
+    ],
+    results: [],
+    getResults(func) {
+        this.tests.forEach(test => {
+            this.results.push(func(test))
+        })
+    },
+    output: `N/A`
+}
+task.getResults(add)

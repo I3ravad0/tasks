@@ -1,6 +1,6 @@
 // In mathematics, the factorial of integer n is written as n!. It is equal to the product of n and every integer preceding it. For example: 5! = 1 x 2 x 3 x 4 x 5 = 120
 
-// Your mission is simple: write a function that takes an integer n and returns the value of n!.
+// Your mission is simple: write a Function that takes an integer n and returns the value of n!.
 
 // You are guaranteed an integer argument. For any values outside the non-negative range, return null, nil or None (return an empty string "" in C and C++). For non-negative numbers a full length number is expected for example, return 25! =  "15511210043330985984000000" as a string.
 
@@ -41,7 +41,7 @@ function multiplyBigNumbers(num1, num2) {
 }
 
 function factorial(n){
-    let result = '1'
+    let result = n > 0 ? '1' : 'Null'
     for (let i = 1; i <= n; i++) {
         result = multiplyBigNumbers(result,i)
     }
@@ -49,6 +49,23 @@ function factorial(n){
 }
 
 console.log(factorial(25));
+
+task = {
+    description: `Function that takes an integer n and returns the value of n!. <br> <br>
+    The use of BigInteger or BigNumber functions has been disabled, this requires a complex solution
+    `,
+    tests: [
+        2, 5, 10, 52, 54, 100, 500, 0, -20
+    ],
+    results: [],
+    getResults(func) {
+        this.tests.forEach(test => {
+            this.results.push(func(test))
+        })
+    },
+    output: `N/A`
+}
+task.getResults(factorial)
 
 // BEST
 // function factorial(n) {

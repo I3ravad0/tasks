@@ -30,6 +30,25 @@ function XO(str) {
 
 console.log(XO('xxOo'));
 
+task = {
+    description: `Check to see if a string has the same amount of 'x's and 'o's. <br>
+        The method must return a boolean and be case insensitive. 
+        The string can contain any char.
+    `,
+    tests: [
+        "ooxx", "xooxx", "ooxXm", 
+        "zpzpzpp", "zzoo"
+    ],
+    results: [],
+    getResults(func) {
+        this.tests.forEach(test => {
+            this.results.push(func(test))
+        })
+    },
+    output: `N/A`
+}
+task.getResults(XO)
+
 // BEST
 // function XO(str) {
 //   let x = str.match(/x/gi);

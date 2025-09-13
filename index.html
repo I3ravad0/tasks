@@ -28,7 +28,7 @@
                 <option value="task4">Регрессивная линия</option>
                 <option value="task5">Сложение больших чисел</option>
                 <option value="task6">Разница между IP адресами</option>
-                <option value="task7">Биномиальное разложение</option>
+                <option value="task7" class="not-done-yet">Биномиальное разложение</option>
                 <option value="task8">Сумма двух элементов массива равная числу</option>
                 <option value="task9">Факториал любого числа</option>
             </select>
@@ -48,6 +48,19 @@
 
             <button type="button" onclick="loadTaskScript()">Загрузить задание</button>
         </div>
+    </div>
+    <div id="task-output-wrapper">
+        <div class="task-parts-title">DESCRIPTION:</div>
+        <div id="task-description"></div>
+        <div id="task-table-wrapper">
+            <table>
+                <tr>
+                    <th>Исходные данные</th><th>Полученные результаты</th>
+                </tr>
+            </table>
+        </div>
+        <div class="task-parts-title">CONSOLE:</div>
+        <div id="task-console"></div>
     </div>
     <div id="task-script">
         

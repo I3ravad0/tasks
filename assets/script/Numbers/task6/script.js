@@ -12,7 +12,8 @@
 // * With input "10.0.0.0", "10.0.1.0"   => return  256 
 // * With input "20.0.0.10", "20.0.1.0"  => return  246
 
-function ipsBetween(start, end){
+function ipsBetween(array){
+    const start = array[0], end = array[1]
     const fisrtAdress = parseInt(start.split('.').reduce((accum, current) =>
         accum + createIPPart((+current).toString(2)) 
     ,0),2)
@@ -30,7 +31,32 @@ function createIPPart(str) {
     return str
 }
 
-console.log(ipsBetween("150.0.0.0", "150.0.0.1"));
+
+task = {
+    description: `Implement a function that receives two IPv4 addresses, 
+        and returns the number of addresses between them (including 
+        the first one, excluding the last one). <br>
+
+        All inputs will be valid IPv4 addresses in the form of 
+        strings. The last address will always be greater than 
+        the first one. <br>
+    `,
+    tests: [
+        ['150.0.0.0','150.0.0.1'],
+        ['192.168.0.1', '192.168.0.180'],
+        ['0.0.0.0','255.255.255.255'],
+        ['192.0.0.0','192.0.1.0'],
+        ['192.0.0.0','192.1.0.0']
+    ],
+    results: [],
+    getResults(func) {
+        this.tests.forEach(test => {
+            this.results.push(func(test))
+        })
+    },
+    output: `N/A`
+}
+task.getResults(ipsBetween)
 
 // BEST
 // function ipsBetween(start, end){

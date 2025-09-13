@@ -24,3 +24,38 @@ select {
 #string-tasks {
     display: none;
 }
+
+table {
+    border: 3px solid black;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+#task-description {
+    width: 30%;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.task-parts-title {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#task-console {
+    width: 30%;
+    text-align: justify;
+}
+
+.not-done-yet {
+    font-weight: bold;
+    background: yellow;
+}
+
+.not-done-yet:before, .not-done-yet:after {
+    content: "⚠️";
+}

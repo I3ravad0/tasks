@@ -115,3 +115,25 @@ console.log(getFormulaElements("(-2a-4)^0"));
 console.log(getFormulaElements("(-12t+43)^2"));
 console.log(getFormulaElements("(r+0)^203"));
 console.log(getFormulaElements("(-x-1)^2"));
+
+task = {
+    description: `This function can find Newtow binom by coefficients
+    `,
+    tests: [
+        "(x+1)^2",
+        '(p-1)^3',
+        "(2f+4)^6",
+        "(-2a-4)^0",
+        "(-12t+43)^2",
+        "(r+0)^203",
+        "(-x-1)^2"
+    ],
+    results: [],
+    getResults(func) {
+        this.tests.forEach(test => {
+            this.results.push(func(test))
+        })
+    },
+    output: `N/A`
+}
+task.getResults(getFormulaElements)

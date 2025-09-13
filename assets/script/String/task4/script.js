@@ -1,4 +1,4 @@
-// Complete the solution so that it splits the string into pairs of two characters. 
+// Complete the solution so that it Splits the string into pairs of two characters. 
 // If the string contains an odd number of characters then it should replace the 
 // missing second character of the final pair with an underscore ('_').
 
@@ -14,6 +14,24 @@ function solution(str){
 }
 
 console.log(solution('aabbccd'));
+
+task = {
+    description: `Splits the string into pairs of two characters.  <br>
+        If the string contains an odd number of characters then it should replace the 
+        missing second character of the final pair with an underscore ('_').
+    `,
+    tests: [
+        'Application', 'Name', 'Eye'
+    ],
+    results: [],
+    getResults(func) {
+        this.tests.forEach(test => {
+            this.results.push(func(test))
+        })
+    },
+    output: `N/A`
+}
+task.getResults(solution)
 
 // BEST
 // function solution(s){

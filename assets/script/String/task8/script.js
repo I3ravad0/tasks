@@ -44,5 +44,21 @@ function findMostFrequentlyWords(words, text) {
     return maxKey
 }
 
-console.log(topThreeWords("  '  "));
-console.log('  \'  '.trim().replaceAll(" ' ",'').split(''));
+task = {
+    description: `Function that finds 3 most popular words in text.
+    `,
+    tests: [
+        'Hello world!',
+        'Say my name',
+        `There are a number of traditions for weddings that have survived into the 21st century. It is still traditional for the bride and groom to have their own parties the night before getting married. The groom's party is called a 'Stag party', while the bride's is known as a 'Hen party'. On the morning of the wedding, the groom should not see the bride. If he does, this is bad luck. The bride puts on her special wedding dress, which is usually white. She also needs to wear 'something old, something new, something borrowed and something blue'. At the church, or registry office, the bride and groom exchange rings before walking together back down the aisle. When they get outside, the bride throws her bouquet in the air. Tradition says that whoever catches it will be the next person to get married.`,
+    ],
+    results: [],
+    getResults(func) {
+        this.tests.forEach(test => {
+            this.results.push(func(test))
+        })
+    },
+    output: `N/A`
+}
+
+task.getResults(topThreeWords)

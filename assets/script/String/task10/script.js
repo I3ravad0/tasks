@@ -21,3 +21,22 @@ function checkNumberByLunaAlg(cardNumber) {
 }
 
 console.log(checkNumberByLunaAlg('4561 2612 1234 5467'));
+
+task = {
+    description: `Luna Algorithm that checks if card number is correct
+    `,
+    tests: [
+        '4561 2612 1234 5467',
+        '1234 5678 1234 5678',
+        '0000 0000 0000 0000'
+    ],
+    results: [],
+    getResults(func) {
+        this.tests.forEach(test => {
+            this.results.push(func(test))
+        })
+    },
+    output: `N/A`
+}
+
+task.getResults(checkNumberByLunaAlg)

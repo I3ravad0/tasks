@@ -1,4 +1,4 @@
-// Write a function that when given a URL as a string, 
+// Write a Function that when given a URL as a string, 
 // parses out just the domain name and returns it as a 
 // string. For example:
 
@@ -25,6 +25,27 @@ function domainName(url){
 }
 
 console.log(domainName("https://www.wz14v.biz/archive/"));
+
+task = {
+    description: `Function that when given a URL as a string, 
+        parses out just the domain name and returns it as a 
+        string.
+    `,
+    tests: [
+        'https://www.wz14v.biz/archive/',
+        'http://gymn19.minsk.edu.by/main.html',
+        'www.broadcast.com'
+    ],
+    results: [],
+    getResults(func) {
+        this.tests.forEach(test => {
+            this.results.push(func(test))
+        })
+    },
+    output: `N/A`
+}
+
+task.getResults(domainName)
 
 // BEST
 // function domainName(url){

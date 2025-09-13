@@ -18,7 +18,8 @@
 // Some arrays will have many elements (>100000). Therefore, 
 // please optimize your code.
 
-function hasPair(A, sum){
+function hasPair(array){
+  const A = array[0], sum = array[1]
   let left = 0
   let rigth = A.length - 1;
   while (left < rigth) {
@@ -37,4 +38,25 @@ function hasPair(A, sum){
 
 
 
-console.log(hasPair([1,5,6,9,10,14,16,20,27,30],3));
+task = {
+    description: `Given a sorted array of integer numbers A and another 
+      integer number sum, write a function that returns true if 
+      there are two (distinct) numbers in A that add up to sum. 
+      Return false otherwise. <br>
+      <br>
+      Some arrays will have many elements (>100000).
+    `,
+    tests: [
+        [[1,5,6,9,10,14,16,20,27,30],3],
+        [[1, 3, 5, 9, 11, 20, 22, 100], 42],
+        [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], 0]
+    ],
+    results: [],
+    getResults(func) {
+        this.tests.forEach(test => {
+            this.results.push(func(test))
+        })
+    },
+    output: `N/A`
+}
+task.getResults(hasPair)

@@ -31,6 +31,23 @@ function narcissistic(value) {
 
 console.log(narcissistic(153));
 
+task = {
+    description: `A Narcissistic Number (or Armstrong Number) is a positive number which 
+    is the sum of its own digits, each raised to the power of the number of 
+    digits in a given base (10). `,
+    tests: [
+        4, 16, 153, 300, 370, 371, 400, 407, 600
+    ],
+    results: [],
+    getResults(func) {
+        this.tests.forEach(test => {
+            this.results.push(func(test))
+        })
+    },
+    output: `N/A`
+}
+task.getResults(narcissistic)
+
 // BEST
 // function narcissistic( value ) {
 //   return ('' + value).split('').reduce(function(p, c){
